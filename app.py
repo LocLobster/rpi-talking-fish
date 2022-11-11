@@ -12,8 +12,8 @@ from fish_facts import get_random_fish_fact
 logging.basicConfig(filename='/home/loc/flask.log', level=logging.DEBUG)
 
 SAY_SCRIPT = '/home/loc/workspace/trunkortreat/www/speech.sh'
-SONG_FILE  = '/home/loc/Wellerman_Nathan_Evans.mp3'
-SILENT_FILE = '/home/loc/workspace/trunkortreat/sandbox/silent_delay.mp3'
+SONG_FILE  = 'INSERT-SONG-PATH-HERE'
+SILENT_FILE = '/home/loc/workspace/trunkortreat/www/silent_delay.mp3'
 SPEECH_DETECTOR = '/home/loc/workspace/trunkortreat/www/speech_detector.py'
 
 global fish_mutex
