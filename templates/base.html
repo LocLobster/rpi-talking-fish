@@ -1,0 +1,51 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} Talking Fish </title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<!-- Basic Page Needs
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8">
+
+<!-- Mobile Specific Metas
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- FONT
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+<!-- CSS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" href="{{ url_for('static', filename='normalize.css')  }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='skeleton.css')  }}">
+
+<!-- Favicon
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="icon" type="image/png" href="{{  url_for('static', filename='fish.png') }}">
+
+<div class='container'>
+  <div class='row'>
+    <img  style="height: 7.5em; margin-left: auto; margin-right: auto; display: block;" src={{ url_for('static', filename='fish.png') }} >
+    <h1 style='text-align: center;'> 
+      Loc's Talking Fish 
+    </h1>
+    <nav><h5 style="text-align: center;">
+      <a href="/">Home</a> | <a href="/control">Control</a> | <a href="/details">Details</a>
+    </h5></nav>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='row'>
+    <section class="content">
+      <header>
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </section>
+  </div>
+</div>
